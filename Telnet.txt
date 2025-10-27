@@ -1,0 +1,7 @@
+sudo apt install 
+sudo apt update 
+sudo apt install telnetd telnet -y 
+sudo systemctl start inetd
+sudo systemctl enable inetd 
+start enable status 
+telnet localhost

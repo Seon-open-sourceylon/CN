@@ -1,0 +1,64 @@
+S.NO Device
+	IPv4
+	Address 	Subnet mask 	Default Gateway
+
+1. PC0 192.168.10.2 	255.255.255.0 	192.168.10.1
+
+2. PC1 192.168.10.3 	255.255.255.0 	192.168.10.1
+
+3. PC2 192.168.20.2 	255.255.255.0 	192.168.20.1
+
+4. PC3 192.168.20.3 	255.255.255.0 	192.168.20.1
+
+5. PC4 192.168.30.2 	255.255.255.0 	192.168.30.1
+
+6. PC5 192.168.30.3 	255.255.255.0 	192.168.30.1
+
+
+
+
+IPv4
+Address 				Subnet mask
+
+1.
+router0 FastEthernet0/0 192.168.10.1 	255.255.255.0
+
+Serial2/0 10.0.0.1 			255.0.0.0
+
+
+2.
+router1
+
+FastEthernet0/0 192.168.20.1		255.255.255.0
+
+Serial2/0 10.0.0.2 			255.0.0.0
+
+Serial3/0 11.0.0.1 			255.0.0.0
+
+
+3.
+router2
+
+FastEthernet0/0 192.168.30.1 		255.255.255.0
+
+Serial2/0 11.0.0.2 			255.0.0.0
+
+
+
+RIP Routes for Router0 are given below:
+Router(config)#router rip
+Router(config-router)#network 192.168.10.0
+Router(config-router)#network 10.0.0.0
+
+RIP Routes for Router1 are given below:
+Router(config)#router rip
+Router(config-router)#network 192.168.20.0
+Router(config-router)#network 10.0.0.0
+Router(config-router)#network 11.0.0.0
+
+RIP Routes for Router2 are given below:
+Router(config)#router rip
+Router(config-router)#network 192.168.30.0
+Router(config-router)#network 11.0.0.0
+
+ping 192.168.20.2
