@@ -1,0 +1,20 @@
+ipconfig(Windows)/ifconfig(Linux)
+ 
+ipconfig /all(Windows)/ip r(Linux)
+
+ping google.com
+
+tracert(Windows)/traceroute(Linux)
+traceroute google.com 
+
+nslookup google.com
+
+hostname 
+
+arp -n 
+
+netstat -tuln 
+
+dig openai.com 
+
+route -n
